@@ -1,0 +1,1281 @@
+<!DOCTYPE html><!--[if lt IE 7]>      
+<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+   <![endif]--><!--[if IE 7]>         
+   <html class='no-js lt-ie9 lt-ie8'>
+      <![endif]--><!--[if IE 8]>         
+      <html class='no-js lt-ie9'>
+         <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths dj_webkit dj_chrome dj_contentbox"><!--<![endif]--><head>
+               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+               <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1" />
+               <meta http-equiv="X-UA-Compatible" value="IE=Edge,chrome=1" />
+               <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+               <meta http-equiv="PRAGMA" content="NO-CACHE" />
+               <meta name="description" content="" />
+               <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- build:js scripts/vendor/ie.js --><!--[if lt IE 9]>
+               <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+               <script src="bower_components/respond/src/respond.js"></script>
+               <![endif]--><!-- endbuild -->
+               
+               
+               
+               
+               
+               <title>Core GSP</title>
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/bootstrap.min.css" />
+               <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/style.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/datepicker3.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.css" />
+        	   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.skinHTML5.css" />
+               </head><body class="ml" style=""><div id="webrespath">
+  <script>
+  /*&lt;![CDATA[*/
+  var webResource = 'https:\/\/qa.salespilot.metlife.com.co\/DataCenter_LATAM';
+  var coreFolder = 'GSP_CORE';
+  var tenantFolder = 'Tenant_COLOMBIA';
+  var locale = 'es_CO';
+  var needAnalysisFlow = '';
+  if(locale == null) {
+    locale = 'es-co';
+  }
+  var appDateFormat = "DD/MM/YYYY";
+  var webResourceAbsolute = 'https:\/\/qa.salespilot.metlife.com.co';
+	var digSeparator=".";
+	var decimalPoint=",";
+  var appendDigit = "0";
+  var appCurMaxLength = 15;
+  var decimalPointRegExp = new RegExp("[" + decimalPoint + "]", "g");
+  var digSeparatorRegExp = new RegExp("[" + digSeparator + "]", "g");
+  /*]]&gt;*/
+  </script><!--[if lt IE 9]>
+		  <script  th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.js'}"></script>
+		  <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/respond/src/respond.js'}"></script>
+        <![endif]-->
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/Calendar/dhtmlxcalendar.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jsrender.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/initGomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/gomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.min.js"></script><!-- <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.js'}" type="text/javascript"></script> --> 
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/prettify.js"></script>
+   <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/isotope.pkgd.min.js"></script>
+ 
+  <script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/throbber.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/adminLeftNav.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/sessionUtil.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/dashBoard.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/parent.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspAjaxDataConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/utils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspBaseController.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspConstants.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCalendarWidget.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/html.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/urlMappings.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/paginationConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspPagination.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/parser.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/request/iframe.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidateElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCommonUtils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspShowHideElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/string.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/_base/url.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/promise/all.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/stamp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidations.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/regExp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/regexp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/lambda.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/array.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/object.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/locale.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/en-us/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/es-co/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/main.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/supplemental.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/planSelection.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/window.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/quoteSelection.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/quoteSummary.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/illustration.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationInsured.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/chartConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspChartController.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/themes/Harmony.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/store/Observable.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/store/Memory.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/DataChart.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/widget/Legend.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/Tooltip.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/Chart.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/registry.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/MouseZoomAndPan.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/MouseIndicator.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/widget/Chart.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/SimpleTheme.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/themes/common.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_WidgetBase.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/Element.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/Series.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/axis2d/common.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/shape.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/fold.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/reversed.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/main.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/store/util/QueryResults.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/store/util/SimpleQueryEngine.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/utils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/Tooltip.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/PlotAction.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/matrix.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/scan.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/gradutils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/Chart2D.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/themes/PlotKit/blue.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/ChartAction.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/Stateful.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/Destroyable.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/svg.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/_IndicatorElement.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_base/manager.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/place.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_Widget.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_TemplatedMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/BackgroundIframe.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/action2d/Base.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/fx/easing.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/path.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/axis2d/Default.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/axis2d/Invisible.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Default.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Lines.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Areas.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Markers.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/MarkersOnly.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Scatter.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Stacked.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/StackedLines.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/StackedAreas.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Columns.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/StackedColumns.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/ClusteredColumns.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Bars.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/StackedBars.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/ClusteredBars.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Grid.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Pie.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Bubble.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Candlesticks.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/OHLC.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Spider.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/themes/PlotKit/base.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/Theme.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Indicator.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/common.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/Viewport.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cache.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_AttachMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_OnDijitClickMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/_FocusMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/uacss.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/hccss.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/scaler/linear.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/axis2d/Base.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/CartesianBase.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/_PlotEvents.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/gfx/fx.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/commonStacked.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/plot2d/Base.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/scaler/common.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/fx.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/color/_base.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/color/Palette.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/touch.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/a11yclick.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/focus.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/hccss.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/charting/scaler/primitive.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/colors.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dijit/a11y.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationOwner.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationBeneficiary.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationLifestyleAndHealth.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationFinancial.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationSummary.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationDeclaration.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/signature_pad.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationPayment.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/libs/jquery.signaturepad.min.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/applicationUploadSubmit.js"></script><script type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'es-co',isDebug:true, extraLocale: ['en-us']" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/dojo.js"></script><!--  <script th:if="${session.langDefault =='en_US'}" th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/dojo/dojo.js'}" type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'en-us',isDebug:true"></script> --><!--this is added temporarly to work with sfdc integration of needs analysis screen, need to be removed later onwards -->
+ 
+  
+  
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/modernizr/modernizr.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/respond.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.polyfill.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.addListener.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-typeahead.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/main.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/locales-datepicker/bootstrap-datepicker.es-co.js"></script>
+</div>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-slider.min.js"></script>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/CanvasSDK/canvas-all.js"></script>
+               <script type="text/javascript">
+                  require([ webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(throbber){  
+                  	throbber.showThrobber("throbberDiv", false);
+                  });
+                  require([webResource+'/'+tenantFolder+'/WebContent/scripts/adminLeftNav.js',webResource+'/'+tenantFolder+'/WebContent/scripts/sessionUtil.js',webResource+'/'+tenantFolder+'/WebContent/scripts/dashBoard.js',webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(adminLeftNav,sessionUtil,dashBoard,throbber){  
+                  	adminLeftNav.init();
+                  	sessionUtil.init();
+                  	dashBoard.init();
+                  	throbber.removeThrobber();
+                  });
+                  require([ webResource+'/'+tenantFolder+'/WebContent/scripts/parent.js'],function(parent){  
+                  	parent.init();
+                  });
+                  
+               </script>
+               <style>
+                  .content-wrap .contentClient {
+                  margin: 0 20px 0 10px;
+                  }
+               </style>
+            
+            
+               <section class="content-wrap">
+                  <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                  <div id="wrapper">
+                  <div></div>
+                     <div><!--Left Nav--><!-- navFragment starts-->
+                        	
+                        
+                        <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                        <nav class="main-nav">
+                             
+						   <div>
+						   <div>
+                              <div id="leftNavigationFragment">   
+   <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+   <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+   <input type="hidden" id="CN" name="CN" value="COL" /><!--Left Nav-->
+   
+   <div>
+      <div></div>
+         <ul class="nav nav-pills nav-stacked">
+            <li class="profile" id="profileIcon">
+               <img src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/images/employee.jpg" />
+               <div class="userMenu" id="userMenu">
+                  <span class="arrow">Arrow</span>
+                  <ul>
+                     <li><a href="#" id="viewProfileLink" data-met-initjs="userProfile" data-original-title="" title="">Ver Perfil</a></li>
+                     <li><a href="#" data-toggle="modal" id="logoutLink" data-original-title="" title="">Salir</a></li>
+                  </ul>
+               </div>
+            </li><!-- DashBoard Tab -->
+			
+            <li class="home"><a href="#" id="dashboardTab" data-original-title="" title=""> 
+			<i class="gsp-icon home"></i><span>Menú Principal</span></a></li><!-- Auditor Dashboard -->
+			
+						
+			<!-- Reassign Tab -->
+			
+			<!-- Client Tab -->
+			
+			
+            <li class="customer">
+			<a href="#" id="clientsTab" data-met-initjs="search" data-original-title="" title=""><i class="gsp-icon customer"></i><span>Clientes</span></a></li><!-- NeedAnalysis Tab -->
+			
+			
+			<li id="needAnalysisTab" class="need"><a id="needAnalysisTab" href="#" data-original-title="" title=""><i class="gsp-icon need"></i><span><span>Análisis de Necesidades</span></span></a></li><!-- Illustration Tab -->
+			
+			
+			<li class="illustration"><a id="illustrationTab" href="#" data-original-title="" title=""><i class="gsp-icon illustration"></i><span><span>Cotizaciones</span></span></a></li><!-- ApplicationSearch Tab -->	
+			
+			
+			<li class="application active">
+			<a href="#" id="applicationTab" data-original-title="" title=""><i class="gsp-icon application"></i><span>Solicitud</span></a></li><!-- Reports Tab -->
+			
+			
+			<li class="product">
+			<a href="#" id="reportsTab" data-original-title="" title="">
+			<i class="gsp-icon product"></i><span>Reportes</span></a></li><!-- Orphan Tab  th:if="${(session.userDetailMap['ROLE_CD'] =='15901' and session.userHierarchyMap['userLevel'] !='4') or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"--> 
+			
+			
+			<!-- GlobalSearch Tab --><!-- <li th:class="${globalSearchTab != null and globalSearchTab == 'true'} ? 'search active' : 'search'" th:if="${session.userDetailMap['ROLE_CD'] =='15901' or session.userDetailMap['ROLE_CD'] =='15905' or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"><a href="#" id="globalSearchTab"><i class='gsp-icon search'></i><span
+			th:utext="#{${ tenantCode}+'.globalSearch'}"></span></a></li>	 -->
+			
+			
+			
+         </ul>
+      </div>
+   </div></div>
+                           </div> 
+						    
+						   
+						   
+						   
+						    
+						    
+						      
+						     
+						    
+						   
+						   
+						   
+						   
+						     
+						    
+						    
+						    
+						   
+                           
+                        </nav><!--Left Nav--><!-- navFragment ends-->
+                        
+                        	
+                     </div><!--Slice--><!--  <div class="content"> -->
+                     
+                     
+                     <div id="mainContentDiv">
+                        <div id="appContent">
+
+
+   <div id="application_UploadDocuments_SubContent">
+   <div class="content">
+   <div id="flowContent">
+    <input type="hidden" value="" name="jsInit" id="jsInit" data-met-initjs="applicationUploadSubmit" /> 
+     <input type="hidden" id="uploadPageLoaded" value="true" />
+     <input type="hidden" id="deleteFunctionCalled" value="false" />
+   <form id="appFormFileTO" name="appFormFileTO" enctype="multipart/form-data" method="post" action="/sales/uploadGenericFile" target="dojo_request_iframe_IoIframe">
+		 <div>
+         	<input type="hidden" name="UWQuestionList" id="UWQuestionList" value="" />
+        </div>
+		<div class="clearfix">
+      <header class="primary client-header-block">
+	 
+			  
+			
+			
+			
+			
+		  
+			
+		 
+		  	 <div> 
+
+		  </div>
+		 
+		  
+		  
+		  
+		   
+		  
+		  <div>
+				<h1 class="client-page-header">Presentar la solicitud</h1>
+		  </div>
+		  
+		</header>
+   </div>
+		 <div class="clearfix well">
+	   <div class="row eapp-top-details">
+		   <div class="col-xs-12 col-sm-4">
+			   <label class="eapp-top-label">Solicitud de: </label>
+			 <span class="eapp-top-span">Pitter Vargas</span> 
+			</div>
+		   <div class="col-xs-12 col-sm-4">
+			   <label class="eapp-top-label">Nombre del producto: </label><!-- <span class="eapp-top-span" th:each="productNames :${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product']}" th:utext="${productNames['productName']}"></span>
+			   <span class="eapp-top-span" th:each="productNames :${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product']}" th:utext="${productNames['productName']}"></span>
+			   <span class="eapp-top-span" th:utext="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product:0.productName']}"></span> -->
+			   
+			   <span class="eapp-top-span">Educativo</span> 
+			   <span class="eapp-top-span"></span>
+			   <span class="eapp-top-span"></span>			   
+			</div>
+		   
+		    <div class="col-xs-12 col-sm-4">
+			   <label class="eapp-top-label">Fecha de Solicitud: </label>
+			 <date class="eapp-top-span">01/03/2019</date> 
+		   </div>
+	   </div>
+	   <div class="row">
+		   <div class="col-xs-12 col-sm-4">
+			   <label class="eapp-top-label">ID de solicitud: </label>
+			      <span class="eapp-top-span">600009000</span>
+				  <input type="hidden" id="applicationID" value="600009000" />
+			</div>
+	   </div>
+   </div>
+		 <div><!--<nav class="navList marginbtm15px wizard clearfix form-group">--><!--<ol class="breadcrumb">-->
+      
+          
+       <nav class="wizard clearfix form-group">
+           <ol id="coreBreadcrumbs" class="breadcrumb position4"><!-- insured details -->
+           
+            
+            
+            
+			 <li class="done" id="insuredHeadTab"> 
+				<a data-original-title="" title="">
+					<span>Información Asegurado</span>
+				</a>
+			</li><!-- owner details --><!-- <a>
+					<span id="abcd" th:text="*{appDataMap['ownerPageStatus']}"></span>
+				</a>
+			-->
+			
+			
+			
+			
+			
+			
+			 		
+             <li class="done" id="applicantHeadTab"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="ownerHeadTab" data-met-initjs="applicationOwner" class="done">Información del tomador</span>
+			 </a>
+			 </li><!-- beneficiary Details -->			 
+			
+      
+			
+			
+			
+			 			
+			
+			<li class="done"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="beneficiaryHeadTab" data-met-initjs="applicationBeneficiary" class="done">información de beneficiario</span>
+			 </a>
+			 </li><!--- Lifestyle and Health -->	
+			 
+			  
+			 
+			 
+			
+			 		
+             <li class="done" id="applicantHeadTab"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="ownerHeadTab" data-met-initjs="applicationLifestyleAndHealth">Estilo de vida y salud</span>
+			 </a>
+			 </li><!--- Financial Detail -->	
+			 
+			  
+			 
+			 
+			
+			 		
+             <li class="done" id="applicantHeadTab"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="ownerHeadTab" data-met-initjs="applicationFinancial">Información Financiera</span>
+			 </a>
+			 </li><!--Application Summary-->	
+			 
+			 
+			
+			
+			
+			 <li class="done"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="paymentHeadTab" data-met-initjs="applicationSummary" class="done">Resumen de Solicitud</span>
+			 </a>
+			 </li>	
+
+           <!--- questionnaire Details --><!-- <div th:if="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product:0.productId']!='TR'}" th:remove="tag"> 
+			
+			<li class='inactive'   th:if="'blank' == ${gspFlowScopeBean.appDataMap['questionnairePageStatus']}"> 
+			<a href='#'>
+			<span th:utext="#{${ tenantCode}+'.questionnaireDetails'}"></span>
+			</a>
+			</li>
+			
+			 <li class='done'  th:if="'filled1' == ${gspFlowScopeBean.appDataMap['questionnairePageStatus']}"> 
+			 <a>
+			 <span href='#' id="questionnaireHeadTab" th:utext="#{${ tenantCode}+'.questionnaireDetails'}" data-met-initjs="applicationQuestionnaire" ></span>
+			 </a>
+			 </li>			
+			
+			<li class='active'  th:if="'filled' == ${gspFlowScopeBean.appDataMap['questionnairePageStatus']}"> 
+			 <a>
+			 <span href='#' id="questionnaireHeadTab" th:utext="#{${ tenantCode}+'.questionnaireDetails'}" data-met-initjs="applicationQuestionnaire" ></span>
+			 </a>
+			 </li>
+         </div>  --><!--- declaration Details -->	
+			
+       
+			 
+			 
+	
+			 
+			 
+	
+			
+			
+			
+			
+			 <li class="done"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="declarationDetailsHeadTab" data-met-initjs="applicationDeclaration" class="done">Declaración</span>
+			 </a>
+			 </li>			
+		
+             <!--- Payment Details -->	
+			
+			
+			
+			
+			 <li class="done"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="paymentHeadTab" data-met-initjs="applicationPayment">Información del pago</span>
+			 </a>
+			 </li>	
+
+           <!--- Upload Document -->				 
+			
+			
+			
+			
+			
+			 	
+
+             <li class="active last" id="docHeadTab"> 
+			 <a data-original-title="" title="">
+			 <span href="#" id="documentsHeadTab" data-met-initjs="applicationUploadSubmit" class="active">Presentar la solicitud</span>
+			 </a>
+			 </li>			 
+			
+			
+     
+			
+            <div class="clear"></div>
+           </ol>
+           <ol class="breadcrumb-scroll">
+               <li class="btn-wrap pull-left">
+                   <div class="btn btn-default" type="submit">
+                       <i class="fa fa-chevron-left"></i>
+                   </div>
+               </li>
+               <li class="btn-wrap pull-right">
+                   <div class="btn btn-default" type="submit">
+                       <i class="fa fa-chevron-right"></i>
+                   </div>
+               </li>
+           </ol>
+       </nav>
+       <div class="row form-group">
+           <div class="col-sm-12">
+               <p class="pull-left"><span>Asegúrese de qué todos los campos obligatorios se han completado.</span><span class="mandatory">*</span>
+               <span>Campos obligatorios</span></p>
+               <div class="need-help pull-right">
+                   <a href="#" data-toggle="popover" data-placement="bottom" data-content=" La ayuda relacionada con esta página aparecerá aquí" data-original-title="" title="">
+                       <strong> Necesitas ayuda</strong>
+                       <i class="fa fa-lg fa-question-circle"></i>
+                   </a>
+               </div>
+               <div class="need-help pull-right">
+                   <a href="#" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
+                       <strong>Observación</strong>
+                       <i class="fa fa-lg fa-question-circle"></i>
+                   </a>
+               </div>
+           </div>
+            <div class="col-sm-12">
+            	<div id="insuredErrorCheckDiv" style="display:none">
+				   <div class="alert alert-danger alert-dismissable">
+				    <span id="dup">Por favor ingrese el número de documento en Adicione Familiar</span>
+				   </div>
+				</div>
+			</div>
+       </div>
+   </div>
+         <div id="application_uploadDocuments_Documents" class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Documentos Soporte de la Solicitud</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label>Documentos a cargar</label><br /><!-- <select class="form-control" id="fileType" th:field="*{gspPolicyMap['fileType']}">
+                    <option value="-1" th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['DOCTYPE_CD']}"
+                            th:value="${listCurrency['masterDataValueCode']}"
+                            th:text="${listCurrency['masterDataValueName']}"></option>
+                </select> -->
+                
+				<select data-met-checks="select" data-met-errordiv="errSpnFileType" data-met-mand="mandatory" class="form-control" id="fileType" name="metaDataMap['appdoctype']">
+					<option value="-1">Seleccione</option><!-- <option value="ID" >Identity</option>
+					<option value="DD" >Nationality</option> -->
+					
+					<option value="CDC">Certificado de Camara y Comercio</option><option value="CDO">Certificado de Origen Ingresos</option><option value="CDP">Comprobante de pago directo</option><option value="X">Documentos adicionales</option><option value="E">Extractos Bancarios</option><option value="CSG">Firma del cliente</option><option value="FDA">Formato de apertura de empresa</option><option value="II">Identificación</option><option value="IRL">Identificación Representate Legal</option><option value="IDE">Identificación de la empresa - RUT</option><option value="ODD">Orden de Descuento</option>
+                </select>
+				<p id="errSpnFileType" class="error" style="display: none;"></p>
+            </div>
+            <div class="form-group col-sm-2"><!-- <div class="test"> -->
+                                    
+					<div class="row"><!-- <button type="button" class="btn btn-primary">Browse</button> -->
+						
+						 <button id="upload" type="button" class="btn btn-primary">Subir</button>
+					</div>
+					<input type="file" id="fileUploadBtn" value="Upload" class="file-input" name="multipartFile" /><!-- <button id="upload" type="button" class="btn btn-primary" th:utext="#{${ tenantCode}+'.uploadDocs'}"></button> --><!-- </div> -->
+                    
+                
+            </div>
+             <div class="form-group col-sm-2">
+             	<input type="hidden" id="docTypeName" name="metaDataMap['appdoctypename']" value="Identificación" />
+             </div>
+        </div>
+    </div>
+</div>
+         <div id="application_uploadDocuments_HeaderTable" class="panel panel-default">
+          <div class="marginLeft0" id="uploadResponse"> 
+	
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="marginLeft0"><!-- virus scan change -->
+					  
+					  <!-- <span th:text = "${errors}"/> --><!--  <ul th:if="${(errors != null) and (errors.size() != 0)}">
+						  <li class="uploadFailMsg" th:each="err : ${errors}" th:text="${err}"></li>
+					   </ul> --> 
+					
+					
+					    
+					    <ul>
+						  <li class="uploadSucessMsg">Documento cargado exitosamente</li>
+					   </ul>
+					</div>
+				</div>
+			
+				
+				
+			</div>
+	  </div>
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Resumen de Documentos Cargados</h3>
+    </div>
+    <div class="panel-body scroll">
+        <div class="tblHead search uploadTbl">
+            <div class="fl width195px widthFix wordWrap"><span>Nombre del documento </span></div>
+            <div class="fl width195px widthFix wordWrap"><span>Fecha de carga</span></div>
+            <div class="fl width195px widthFix wordWrap"><span>Subido por</span></div>
+            <div class="fl width195px widthFix wordWrap"><span>Tipo de Documento</span></div>
+        </div>
+		<div id="application_uploadDocuments_Summary">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div id="application_uploadDocuments_Summary">
+	<div class="marginLeft0" id="uploadResponse"></div>
+	<div><!-- div th:if="${gspFlowScopeBean != null and gspFlowScopeBean.gspDataMap != null and gspFlowScopeBean.gspDataMap['documents'] != null}">
+            <div class="row" th:each="document : ${gspFlowScopeBean.gspDataMap['documents']}"-->
+		
+		<div>
+
+			<div class="row" style="margin-left: 0px;margin-right: 0px;">				<div class="fl width195px widthFix wordWrap">
+					<a target="_blank"><span class="pull-left fa fa-file-o"></span><span id="downLoadFile" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{OjLnMKPh-jjjj-kKOm-KinO-llPmBOMELgEN}&quot;}">Certificado.pdf</span></a>
+
+				</div>
+
+				<div class="fl width195px widthFix wordWrap">
+					<span>2019-03-01 15:35:36</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+
+					<span>4000002</span>
+
+				</div>
+				<div class="fl width195px widthFix wordWrap" id="uploadedFileType">
+					<span>Certificado de Origen Ingresos</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+					<a href="#" id="deleteFile" class="dropdown-primary" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{OjLnMKPh-jjjj-kKOm-KinO-llPmBOMELgEN}&quot;}">Borrar </a> <input type="file" id="modifyFileUploadBtn" value="Upload" class="file-input" name="multipartFile" style="display: none" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{OjLnMKPh-jjjj-kKOm-KinO-llPmBOMELgEN}&quot;}" /><!--                     	<a href="#" id="modifyFile" th:attrappend="data-met-data='{&quot;documentId&quot;:&quot;__${document['fileId']}__&quot;}'" class="dropdown-primary">| Editar</a> -->
+					
+				</div>
+			</div><div class="row" style="margin-left: 0px;margin-right: 0px;">				<div class="fl width195px widthFix wordWrap">
+					<a target="_blank"><span class="pull-left fa fa-file-o"></span><span id="downLoadFile" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{BjLnMKPh-jjjj-kNOM-ilmN-igjBmPOPPigP}&quot;}">Extractos.pdf</span></a>
+
+				</div>
+
+				<div class="fl width195px widthFix wordWrap">
+					<span>2019-03-01 15:35:51</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+
+					<span>4000002</span>
+
+				</div>
+				<div class="fl width195px widthFix wordWrap" id="uploadedFileType">
+					<span>Extractos Bancarios</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+					<a href="#" id="deleteFile" class="dropdown-primary" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{BjLnMKPh-jjjj-kNOM-ilmN-igjBmPOPPigP}&quot;}">Borrar </a> <input type="file" id="modifyFileUploadBtn" value="Upload" class="file-input" name="multipartFile" style="display: none" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{BjLnMKPh-jjjj-kNOM-ilmN-igjBmPOPPigP}&quot;}" /><!--                     	<a href="#" id="modifyFile" th:attrappend="data-met-data='{&quot;documentId&quot;:&quot;__${document['fileId']}__&quot;}'" class="dropdown-primary">| Editar</a> -->
+					
+				</div>
+			</div><div class="row" style="margin-left: 0px;margin-right: 0px;">				<div class="fl width195px widthFix wordWrap">
+					<a target="_blank"><span class="pull-left fa fa-file-o"></span><span id="downLoadFile" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{hjLnMKPh-jjjj-kjOn-Emml-lNKKlNlgnnOn}&quot;}">Firma.pdf</span></a>
+
+				</div>
+
+				<div class="fl width195px widthFix wordWrap">
+					<span>2019-03-01 15:36:08</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+
+					<span>4000002</span>
+
+				</div>
+				<div class="fl width195px widthFix wordWrap" id="uploadedFileType">
+					<span>Firma del cliente</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+					<a href="#" id="deleteFile" class="dropdown-primary" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{hjLnMKPh-jjjj-kjOn-Emml-lNKKlNlgnnOn}&quot;}">Borrar </a> <input type="file" id="modifyFileUploadBtn" value="Upload" class="file-input" name="multipartFile" style="display: none" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{hjLnMKPh-jjjj-kjOn-Emml-lNKKlNlgnnOn}&quot;}" /><!--                     	<a href="#" id="modifyFile" th:attrappend="data-met-data='{&quot;documentId&quot;:&quot;__${document['fileId']}__&quot;}'" class="dropdown-primary">| Editar</a> -->
+					
+				</div>
+			</div><div class="row" style="margin-left: 0px;margin-right: 0px;">				<div class="fl width195px widthFix wordWrap">
+					<a target="_blank"><span class="pull-left fa fa-file-o"></span><span id="downLoadFile" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{ljLnMKPh-jjjj-khOP-hEki-knOBPiLnMPkg}&quot;}">Identificacion.pdf</span></a>
+
+				</div>
+
+				<div class="fl width195px widthFix wordWrap">
+					<span>2019-03-01 15:36:24</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+
+					<span>4000002</span>
+
+				</div>
+				<div class="fl width195px widthFix wordWrap" id="uploadedFileType">
+					<span>Identificación</span>
+				</div>
+				<div class="fl width195px widthFix wordWrap">
+					<a href="#" id="deleteFile" class="dropdown-primary" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{ljLnMKPh-jjjj-khOP-hEki-knOBPiLnMPkg}&quot;}">Borrar </a> <input type="file" id="modifyFileUploadBtn" value="Upload" class="file-input" name="multipartFile" style="display: none" data-met-data="{&quot;documentId&quot;:&quot;idd_DiymD:OP:{ljLnMKPh-jjjj-khOP-hEki-knOBPiLnMPkg}&quot;}" /><!--                     	<a href="#" id="modifyFile" th:attrappend="data-met-data='{&quot;documentId&quot;:&quot;__${document['fileId']}__&quot;}'" class="dropdown-primary">| Editar</a> -->
+					
+				</div>
+			</div>
+		</div><!--  div th:if="${gspFlowScopeBean == null or gspFlowScopeBean.gspDataMap == null or gspFlowScopeBean.gspDataMap['documents'] == null}"-->
+		
+		<!-- th:attrappend="data-met-data='{&quot;documentId&quot;:&quot;__${document['fileId']}__&quot;}'" -->
+
+		
+
+
+
+	</div>
+</div>
+</div> 
+    </div>
+	
+</div>
+		  <div id="uploadDocPopUp"><!--popup-->
+    
+    <div class="modal fade" id="uploadDocOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="uploadClose" type="button" class="modal close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                    <h2 class="modal-title" id="myModalLabel-1">??DC.LATAM.SALES.COL.uploadDocumentHeader_es_CO??</h2>
+                </div>
+                <div class="modal-body">
+                    <p>??DC.LATAM.SALES.COL.uploadDocumentPop_es_CO??</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="popupCancelBtn" type="button" class="btn btn-default btn-lg pull-left" data-dismiss="modal">Cancelar</button>
+                    <button id="uploadOKGO" data-dismiss="modal" type="button" class="btn btn-primary btn-lg pull-left">??DC.LATAM.SALES.COL.continueBtn_es_CO??</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			 <div id="savePopupFragment">
+    <div class="modal fade" id="savePopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-wrap-right" data-dismiss="modal" aria-hidden="true"></button>
+                    <h2 class="modal-title" id="myModalLabel-1">Información</h2>
+                </div>
+                <div class="modal-body">
+                    <p>¿Se perderán los datos no guardados, ¿desea continuar?</p>
+                </div>
+                <div class="modal-footer">
+				<button id="popupSave" type="button" class="btn btn-primary btn-lg pull-left">Si</button>
+                    <button id="popupCancel" type="button" class="btn btn-default btn-lg pull-left" data-dismiss="modal">No</button>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		 	<div id="reconfirmlifeInfoPopup_Fragment">
+      <div id="reconfirmInfoPopUp" class="modal fade" aria-labelledby="myModalLabel-1" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog" tabindex="-1" role="dialog">
+              <div class="modal-content">
+         <div id="fg_container_header"></div>
+         <div class="modal-body">
+            <h3 class="">Por favor revalidate toda la información proporcionada</h3>
+            <h5 class="fl " id="reconfirmLifeInfo"> </h5>
+         </div>
+                  <div class="modal-footer">
+                      <button id="reconfirmPopUpBtn" type="button" data-dismiss="modal" class="btn btn-primary btn-lg pull-left">Cerrar</button>
+                  </div>
+      </div>
+              </div>
+          </div>
+      <div id="fg_backgroundpopup"></div>
+   </div>
+		 <input type="hidden" id="fileCategory" name="fileCategory" value="APPLICATION_DOCUMENT" />           
+         <input type="hidden" id="appNumber" name="metaDataMap['appNumber']" value="600009000" />
+		 <input type="hidden" id="userId" name="userId" value="4000002" /> 
+		 <input type="hidden" id="appId" name="appId" value="9064" />
+		 <input type="hidden" id="appSubStatus" name="appSubStatus" value="" />
+        <input id="dropActivity" type="hidden" value="1" />
+        <input id="insuredRelToOwner" type="hidden" value="1" />
+        <input id="policyHolderType" type="hidden" value="-1" />
+       <input type="hidden" id="appRecPayList" value="-1" /> 
+        <input type="hidden" id="appRecNITList" value="-1," /> 
+        <!-- <input type="hidden" id="fileCategory" name="fileCategory" value="CUSTOMER_DOCUMENT"/>           
+         <input type="hidden" id="appNumber" name="metaDataMap['appNumber']" value="A000000001" /> --><!-- th:value="${gspFlowScopeBean.metaDataMap['appNumber']}" --><!--           <input type="hidden" id="appdoctype" name="metaDataMap['appdoctype']" value="1"/>
+ --><!-- th:value="${gspFlowScopeBean.metaDataMap['appNumber']}" -->
+		  
+		 
+		  
+      </form>
+	  
+      <form id="applicationSubmit" name="applicationSubmit" data-met-formtosubmit="" method="post"><!-- <input type="hidden" value="" name="jsInit" id="jsInit" data-met-initjs="applicationUploadSubmit"/> --><!--Drools Product Expiry and Age Validation Change Start-->
+         
+		 
+		 
+		<input id="paymentStatusRecurr" type="hidden" value="TRUE" /><!-- ${gspFlowScopeBean.appDataMap['applicationDetails.paymentDetails.recPaymetRecd']} -->
+		<input id="paymentStatusFirst" type="hidden" value="" /><!-- ${gspFlowScopeBean.appDataMap['applicationDetails.paymentDetails.firstPaymetRecd']} -->
+	   <input id="hiddenDroolsId" type="hidden" value="" />
+	   <input id="hiddenDroolsErrCdProdExp" type="hidden" value="" />
+	   <input id="hiddenDroolsErrCdMinAge" type="hidden" value="" />
+	   <input id="hiddenDroolsErrCdMaxAge" type="hidden" value="" />
+	   <input id="reconfirmLifeInfo" type="hidden" value="N" />
+	    <input id="isManualExptraprimableCalculated" type="hidden" value="" />
+	    <input id="isCriticalExtraCalculated" type="hidden" value="" />
+	    <input id="isCriticalEPPage" type="hidden" value="" />
+	   <div id="emailApplicationSummary_Overlay">
+			<div class="modal fade" id="sendAppEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close fa fa-times" id="btnCloseEmail" data-dismiss="modal" aria-hidden="true"></button>
+					  <h2 class="modal-title" id="myModalLabel-1">Correo Electrónico</h2>
+					</div>
+					<div class="modal-body"><!-- <form id="emailForm" name="emailForm" method="post" data-met-formToSubmit="" > -->
+						
+							<p>Ingrese su dirección de correo electrónico: <input type="text" class="form-control" id="emailId" data-met-mand="mandatory" name="metaDataMap['toEmailId']" data-met-blur="minLength;email" data-met-minlength="1" maxlength="60" data-met-errordiv="errSpnTxtAppSummEmailID" /></p>
+							<p id="errSpnTxtAppSummEmailID" class="error"></p>
+							<span id="emailSuccessSpan" style="display:none;">Correo electrónico enviado con éxito</span><!-- </form> -->
+						
+					</div>	
+					<div class="modal-footer">
+					  <button id="overlaySendEmailBtn" type="button" class="btn btn-primary btn-lg pull-left">Enviar correo electrónico</button>
+					  <button type="button" id="btnCancelEmail" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">Cancelar</button>
+					</div>
+				  </div>
+				</div>	  
+			</div><!-- </form> -->
+	
+	</div>
+	   <div id="submitConfirmationOverlayFragment">
+
+	<div class="modal fade" id="submitResponseOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<p>La solicitud se presentó con éxito.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+	   
+	   <div id="submitFailureResponseOverlayFragment">
+
+	<div class="modal fade" id="submitFailureResponseOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<p>La Solicitud no se ha enviado debido a problemas técnicos. Vuelva a intentarlo después de algún tiempo</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+	   
+	   <div id="submitResponseOverlayFragment">
+        
+            <div class="modal fade" id="submitConfirmationOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content"><!-- <div class='modal-header'>
+                        <button type='button' class='close fa fa-times' data-dismiss='modal' aria-hidden='true'></button>
+                        <h2 class='modal-title' id='myModalLabel-1'>Information Verification</h2>
+                      </div> -->
+                      
+                      <div class="modal-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p>Haga clic en Si para enviar la Solicitud. El estado de la Solicitud se mostrará en la pagina principal del menú.</p>
+                            </div>
+                          </div>
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  pull-left" id="btnSubmitConfirm">Sí</button>
+                         <button type="button" class="btn btn-primary  pull-left" id="btnSubmitCancel" data-dismiss="modal">No</button>
+                      </div>
+                    </div>
+                  </div>
+            
+        </div>
+    </div>
+	    
+	   <div id="application_EditOverlayFragment">
+		
+	<div class="modal fade" id="application_EditOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true"><!--<input type="hidden" value="" name="jsInit" id="jsInit" data-met-initjs="application"/>         -->
+       
+	   
+		 <div class="modal-dialog">
+              <div class="modal-content"><!--<div class='modal-header'>
+                   <p><h1><span>Your Product has been expired</span></h1></p>
+                </div>-->
+                
+				<div><!-- <input type="text" th:value="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product:0.productId']}"/> --><!-- 				 <input type="hidden" id="test1" name="metaDataMap['planCodeValue']" th:value=			"${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.selectedProducts.product:0.productId']}"/>  --><!-- 				  <input type="hidden" id="test2" name="illustrationNum" th:value="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.illustrationNum']}"/>  --><!-- 				 <input type="hidden" id="test3" name="illustrationId" th:value="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.illustrationId']}"/>  --><!-- 				 <input type="hidden" id="test4" name="illustrationId" th:value="${gspFlowScopeBean.appDataMap['applicationDetails.illustrationDetails.illustrationId']}"/> -->
+				
+
+
+
+
+				 <input type="hidden" id="test5" name="illustrationStatus" value="INP" />
+				 </div>
+				 
+                <div class="modal-body">
+                  	<p><span id="applicationEditOverlayMsg"></span></p>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" id="btnEditApplOverlayOk" class="btn btn-primary btn-lg pull-left">De acuerdo</button>
+				  
+                </div>
+              </div>
+            </div>
+          </div>
+	</div><!--Drools Product Expiry and Age Validation Change Start-->     
+	    
+         <input type="hidden" name="flowExecUrl" id="flowExecUrl" value="/sales/parentflow?execution=e3s17&amp;TOKEN_CLT_TRNS=BGVCKBM9UMVSZP22" />
+		 <div id="hiddenVariablesToSubmit_fragment">
+		<input id="queryBuilderParam" type="hidden" name="queryBuilderParam" value="" />
+		<input id="pageToLoad" type="hidden" name="pageToLoad" value="" />
+		<input id="searchCriteriaInputs" type="hidden" name="searchCriteriaInputs" value="FullName|custId|QuoteStatus|QuoteNumber|quoteStartDate|quoteExperiedDate|illustrationSearch|product|IllustrationStatus|IllustrationName|NeedStatus|FirstName|LastName|CUST_ID|AGNT_ID|AGNT_ID_FROM|TASK_STTS_NM|USR_ID|taskRef|MultipleSearchCriteria|ApplicationStatus|FirstNameField|LastNameField|DateOfBirth|DocIdNumber|AppId|ApplicationStartDate|ApplicationEndDate" />
+<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input id="nativeQueryFlag" type="hidden" name="nativeQueryFlag" value="false" />
+		<input id="nativeQuerySQLKey" type="hidden" name="nativeQuerySQLKey" value="" />
+		<input id="inputList" type="hidden" name="inputList" value="" />
+		<input id="inputListCount" type="hidden" name="inputListCount" value="" />
+		<input id="nativeQuerySQLKeyCount" type="hidden" name="nativeQuerySQLKeyCount" value="" />
+		<input id="fragmentToLoad" type="hidden" name="fragmentToLoad" value="" />
+		<input id="multipleNativeQueryFlag" type="hidden" name="multipleNativeQueryFlag" value="false" />
+		<input id="nativeQueryMultipleSql" type="hidden" name="nativeQueryMultipleSql" value="" />
+		<input id="mulQueryIpList" type="hidden" name="mulQueryIpList" value="" />
+		<input id="resultSetKeysList" type="hidden" name="resultSetKeysList" value="" />
+		<input id="queryBuilderFlagActv" type="hidden" name="queryBuilderFlagActv" value="true" />
+		<input id="getTypeAheadDataFlag" type="hidden" name="getTypeAheadDataFlag" value="" />
+		<input id="criteriaSearchFlag" type="hidden" name="criteriaSearchFlag" value="" />
+		<input id="criteriaSearchCountQuery" type="hidden" name="criteriaSearchCountQuery" value="" /><!-- 	<input id="hiddenCustId" type="hidden" name="hiddenCustId" value=""></input> -->
+	
+		<input id="recordType" type="hidden" name="recordType" value="" />
+		<input id="appendUniqueIdentifier" type="hidden" name="appendUniqueIdentifier" value="" />  
+		<input id="perPage" type="hidden" name="perPage" value="" />
+		<input id="leftJoinKey" type="hidden" name="leftJoinKey" value="" />
+		<input id="queryBuilderParamCount" type="hidden" name="queryBuilderParamCount" value="" />
+		<input id="globalSearchDefaultPage" type="hidden" name="globalSearchDefaultPage" value="" />
+		<input id="taskFlag" type="hidden" name="taskFlag" value="" />
+<input id="viewAllFlag" type="hidden" name="viewAllFlag" value="" />
+		<input id="hidWhereClauseTextBox" type="hidden" name="whereClauseTextBox" value="" />
+		<input id="dashBoardStatusType" type="hidden" name="dashBoardStatusType" value="" />
+            <input id="dynamicParamsForStatus" type="hidden" name="dynamicParamsForStatus" value="" />
+            <input id="advancedSearchFlag" type="hidden" name="advancedSearchFlag" value="" />
+            <input id="advancedSearch" type="hidden" name="advancedSearch" value="" />
+           <input id="advancedSearchSQLPart1" type="hidden" name="advancedSearchSQLPart1" value="" />
+           <input id="advancedSearchSQLPart2" type="hidden" name="advancedSearchSQLPart2" value="" />
+           <input id="nativeQueryKeyCountForScroll" type="hidden" name="nativeQueryKeyCountForScroll" value="" /> 
+            <input id="searchFlag" type="hidden" name="searchFlag" value="" />
+            <input id="searchPageParam" type="hidden" name="searchPageParam" value="" />
+            <input id="role_code" type="hidden" name="role_code" value="15901" />
+            <input id="polHolderType" type="hidden" name="polHolderType" />
+	</div>
+         <div id="application_UploadDocuments_Footer">
+	
+	<div class="btn-wrap btn-wrap-primary pull-top col-sm-6 col-md-6"><!--  <form id="application_UploadDocuments_Footer_Form" class="fl" name="application_UploadDocuments_Footer_Form"> -->
+		
+           <button type="button" id="btnViewApplication_uploadDoc" class="btn btn-default btn-mobile">Ver Solicitud</button>
+            <button type="button" id="btnViewApplication_uploadCertDoc" class="btn btn-default btn-mobile">Ver Certificado</button>
+		   
+           <button type="button" id="btnEmailApplication_uploadDoc" class="btn btn-default btn-mobile">Email Solicitud</button><!-- </form>	 -->	
+          
+	</div>
+
+	<div class="col-sm-6 col-md-6"> 
+    <div class="btn-wrap btn-wrap-primary pull-right">	
+	
+		 <a href="#" class="btn btn-secondary btn-mobile" id="uploadLinkCancel" data-original-title="" title="">CANCELAR</a>
+	
+        <button type="button" href="#" class="btn btn-default btn-mobile" id="uploadDocumetsBack">Atras</button>
+				
+		
+	
+		
+				
+        <button type="button" id="btnUploadDocumetsSaveLater" class="btn btn-default btn-mobile" onclick="window.scrollTo(0,0);">Guardar y Salir</button><!-- <button type="button" id="btnSubmitComplete" class="btn btn-success btn-mobile"
+                th:if="*{metaDataMap['linkId']!='viewApplication'}" th:utext="#{${ tenantCode}+'.appComplete'}"></button> -->
+                
+        
+             
+         <!-- <button type="button" id="btnSubmitComplete" class="btn btn-success btn-mobile"
+                th:if="*{metaDataMap['linkId']=='viewApplication'} and ${devolutionesFlag}" th:utext="#{${ tenantCode}+'.appComplete'}" ></button>  -->   
+              
+		 
+                
+         <button type="button" id="btnSubmitComplete" class="btn btn-success btn-mobile">PRESENTAR LA SOLICITUD</button>       		
+                
+         
+    
+    </div>
+	</div>
+</div>
+
+	 <input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="BGVCKBM9UMVSZP22" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="V3VDPC2UB845LJYR" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="VWKE8A2AU0NU9SK9" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="JSANEB5YS96D62UD" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="XNGU01APB14Z8PGJ" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="BYLZSUYWW7AD1GZR" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="YYZSA7FZBFEDNTAB" /><input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="C7UERFNUPP09RZBC" /></form>
+	 <div id="applicationUpload_paymentStatus">
+	<div class="modal fade" id="paymentFailure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+					<h2 class="modal-title" id="myModalLabel-1">Verificación del pago pendiente</h2>
+				</div>
+				<div class="modal-body">
+					<p>Primer pago</p>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+</div>
+	 <div id="applicationUpload_paymentStatusRecurr">
+	<div class="modal fade" id="recurrPaymentFailure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+					<h2 class="modal-title" id="myModalLabel-1">Verificación del pago pendiente</h2>
+				</div>
+				<div class="modal-body">
+					<p>Recurring Payment</p>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+</div>
+   </div>
+   </div>
+   </div>
+</div>
+                     </div><!--   </div> --><!-- throbber supported fields-->
+                     
+                     
+                     <div id="throbberDiv"></div>
+                      <div id="fg_backgroundpopup"></div>
+                  </div>
+               </section>
+               <div id="overlay_ImportFragment">
+        <div id="createNewClient_overlay">
+	
+	
+	<div class="modal fade" id="createNewClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div><!-- <div class="modal-body">
+                  	<p><span th:utext="#{${ tenantCode}+'.clientInfoSaved'}"></span></p>
+                </div> -->
+                
+                 <div class="modal-body">
+                  	<p>
+                  	<span>La información del cliente ha sido actualizada</span>
+                  	
+                  	</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnSearchClient" class="btn btn-primary btn-lg pull-left">Menú de Clientes</button>
+                  <button type="button" data-met-initjs="needsAnalysis" id="btnContinueToNeeds" class="btn btn-primary btn-lg pull-left">Análisis de Necesidades</button>
+				     
+ 				    
+ 				    
+	            </div>
+              </div>
+            </div>
+          </div>
+		 
+	</div>
+		<div id="createNewClientConfirm_Overlay"><!--  <div id="createNewClientConfirmOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+            <div class="popHeader">
+               <p>
+                  <a href="#" class="closeBtn" data-met-hidepopup="createNewClientConfirmOverlay" id="clientConfirmCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+            </div>
+            <div class="sampleTxt">
+               <p><span th:utext="#{${ tenantCode}+'.createClientConfirm'}"></span></p>
+               
+         <article class="row">
+                    <div class="col-sm-12">
+                      <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+                        <div class="form-group">
+                         <button  class="btn btn-primary btn-mobile btn-form-submit" id="btnCreateClientOK" type="button" th:utext="#{${ tenantCode}+'.createClientOK'}"></button>
+         <button  class="btn btn-secondary btn-mobile" th:utext="#{${ tenantCode}+'.createClientCancel'}" id="btnCreateClientCancel" type="button" data-met-initjs="planSelection"></button>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+            </div>
+         </div>
+         
+         </div>
+         </div>
+         </html> -->
+      
+      <div class="modal fade" id="createNewClientConfirmOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>¿Está seguro de crear?</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnCreateClientOK" data-met-initjs="createNewClient">Si</button>
+                  <button type="button" id="btnCreateClientCancel" class="btn btn-primary btn-lg pull-left">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="cancelOverlay_overlay"><!-- <div id="cancelOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="cancelOverlay" id="cancelOverlayCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.cancelText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnCancelNo" type="button" data-met-hidepopup="cancelOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	
+    </div>
+</html> -->
+		
+
+<div class="modal fade" id="cancelOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="modal fade" id="cancelOverlayNeedsAnalysis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnNeedsCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+		<div id="profileUpdate_overlay"><!-- <div id="profileUpdateOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.profileUpdatedSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnUpdateProfileSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-hidepopup="profileUpdateOverlay" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+      <div class="modal fade" id="profileUpdateOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Perfil salvado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnUpdateProfileSuccessOverlayOk" data-dismiss="modal" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay">De acuerdo</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="changePasswordSuccess_Overlay"><!-- <div id="changePasswordSuccessOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.changePasswordSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnChngPwdSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-initjs="userProfile"  data-met-overlay="changePasswordSuccessOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+
+
+      <div class="modal fade" id="changePasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Su contraseña se ha cambiado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                 <button class="btn btn-primary btn-lg pull-left" data-dismiss="modal" id="btnChngPwdSuccessOverlayOkAgent" type="button" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay">De acuerdo</button>
+             
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="logout_overlay"><!-- <div id="logoutOverlay"  th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" id="logoutOverlayCloseBtn" ><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.logoutText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnlogoutYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnlogoutNo" type="button" data-met-hidepopup="logoutOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	 -->
+		
+		<div class="modal fade" id="logoutOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<form id="frmLogoutOverlay" data-met-logoutformtosubmit="" data-met-formmethod="POST">
+			<input type="hidden" id="hidLastVisitedPage" name="lastVisitedPage" value="" />
+			<input type="hidden" id="CN" name="CN" value="COL" />
+		</form>
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>¿Esta seguro que quiere salir? </span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnlogoutYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+       <div id="resetPassword_successOverlay"><!--  <div id='resetPasswordSuccessOverlay' class="pop_container forgotPassword_Popup"> -->
+     
+         <div class="modal fade" id="resetPasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true"> 
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3>Cambiar Contraseña</h3>
+                 
+               </div>
+               <div class="modal-body">
+                  <form class="fl">
+                     <p><span>La contraseña ha sido cambiada exitosamente.</span>
+                        <span>Por favor ingrese de nuevo</span>
+                     </p>
+					 </form>
+               
+                    </div>
+                     <div class="clear"></div>
+                     <div class="modal-footer" align="center">
+                        <button id="btnloginAfterReset" class="btn btn-primary btn-lg pull-left" type="button">De acuerdo</button>
+                     </div>
+            </div>
+         </div>
+          </div><!--  </div> --> 
+     
+   </div>
+        <div id="sessionPopUp"><!--  <div id="fg_sessPopUp_Container" class="pop_container" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div id="fg_container_header"></div>
+         <div class="pop_box" >
+            <div class="pop_title" th:utext="#{${ tenantCode}+'.sessionTimeOutMessage'}"> </div>
+            <div class="fl pop_txt" id="sessRemainTime"> </div>
+            <div class="fr">
+      <button id="btnClose" th:utext="#{${ tenantCode}+'.close'}"></button>
+            </div>
+            <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" th:value="${session.MAXSESSINTERVAL}" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" th:value="${session.timeBeforeSessExpire}" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" th:value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+         </div>
+      </div>
+      <div id="fg_backgroundpopup"></div>
+   </div>
+</html> -->
+     
+
+<div class="modal fade" id="fg_sessPopUp_Container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog" id="fg_container_header">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+				<div class="fl pop_txt" id="sessRemainTime"> </div>
+					<p><span>Esta sesión está a punto de agotar el tiempo. Guarde su trabajo para evitar la pérdida de datos.</span></p>
+                     <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" id="btnClose" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div> 
+   </div>
+			   <input type="hidden" id="flowStatus" value="1" /><!-- <div class="modal-backdrop fade in"></div> -->
+			   
+            
+         <div class="dhtmlxcalendar_container dhtmlxcalendar_skin_dhx_skyblue" style="display: none;"><div><div class="dhtmlxcalendar_month_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_month_hdr"><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left&quot;;"></div><span class="dhtmlxcalendar_month_label_month" id="monthId">Enero</span><span id="yearId" class="dhtmlxcalendar_month_label_year">2014</span><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right&quot;;"></div></li></ul></div><div class="dhtmlxcalendar_days_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">w</div></li><li class="dhtmlxcalendar_cell_first">L</li><li class="dhtmlxcalendar_cell">M</li><li class="dhtmlxcalendar_cell">I</li><li class="dhtmlxcalendar_cell">J</li><li class="dhtmlxcalendar_cell">V</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">S</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">D</li></ul></div><div class="dhtmlxcalendar_dates_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">53</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_date_weekend"><div class="dhtmlxcalendar_label">5</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">9</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">10</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">11</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">12</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">13</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">14</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">15</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">16</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">17</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">18</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">19</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">20</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">21</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">22</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">23</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">24</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">25</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">26</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">27</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">28</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">29</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">2</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">9</div></li></ul></div><div class="dhtmlxcalendar_time_cont" style="display: none;"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_time_hdr"><div class="dhtmlxcalendar_time_label"></div><span class="dhtmlxcalendar_label_hours">16</span><span class="dhtmlxcalendar_label_colon">:</span><span class="dhtmlxcalendar_label_minutes">00</span></li></ul></div><div class="dhtmlxcalendar_bottom"></div></div></div><div class="dhtmlxcalendar_container dhtmlxcalendar_skin_dhx_skyblue" style="display: none;"><div><div class="dhtmlxcalendar_month_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_month_hdr"><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left&quot;;"></div><span class="dhtmlxcalendar_month_label_month" id="monthId">Enero</span><span id="yearId" class="dhtmlxcalendar_month_label_year">2014</span><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right&quot;;"></div></li></ul></div><div class="dhtmlxcalendar_days_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">w</div></li><li class="dhtmlxcalendar_cell_first">L</li><li class="dhtmlxcalendar_cell">M</li><li class="dhtmlxcalendar_cell">I</li><li class="dhtmlxcalendar_cell">J</li><li class="dhtmlxcalendar_cell">V</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">S</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">D</li></ul></div><div class="dhtmlxcalendar_dates_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">53</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_date_weekend"><div class="dhtmlxcalendar_label">5</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">9</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">10</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">11</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">12</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">13</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">14</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">15</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">16</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">17</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">18</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">19</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">20</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">21</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">22</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">23</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">24</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">25</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">26</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">27</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">28</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">29</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">2</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">9</div></li></ul></div><div class="dhtmlxcalendar_time_cont" style="display: none;"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_time_hdr"><div class="dhtmlxcalendar_time_label"></div><span class="dhtmlxcalendar_label_hours">16</span><span class="dhtmlxcalendar_label_colon">:</span><span class="dhtmlxcalendar_label_minutes">00</span></li></ul></div><div class="dhtmlxcalendar_bottom"></div></div></div><div class="dhtmlxcalendar_container dhtmlxcalendar_skin_dhx_skyblue" style="display: none;"><div><div class="dhtmlxcalendar_month_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_month_hdr"><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left&quot;;"></div><span class="dhtmlxcalendar_month_label_month" id="monthId">Enero</span><span id="yearId" class="dhtmlxcalendar_month_label_year">2014</span><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right&quot;;"></div></li></ul></div><div class="dhtmlxcalendar_days_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">w</div></li><li class="dhtmlxcalendar_cell_first">L</li><li class="dhtmlxcalendar_cell">M</li><li class="dhtmlxcalendar_cell">I</li><li class="dhtmlxcalendar_cell">J</li><li class="dhtmlxcalendar_cell">V</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">S</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">D</li></ul></div><div class="dhtmlxcalendar_dates_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">53</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_date_weekend"><div class="dhtmlxcalendar_label">5</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">9</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">10</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">11</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">12</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">13</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">14</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">15</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">16</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">17</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">18</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">19</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">20</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">21</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">22</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">23</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">24</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">25</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">26</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">27</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">28</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">29</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">2</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">9</div></li></ul></div><div class="dhtmlxcalendar_time_cont" style="display: none;"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_time_hdr"><div class="dhtmlxcalendar_time_label"></div><span class="dhtmlxcalendar_label_hours">16</span><span class="dhtmlxcalendar_label_colon">:</span><span class="dhtmlxcalendar_label_minutes">00</span></li></ul></div><div class="dhtmlxcalendar_bottom"></div></div></div><div class="dhtmlxcalendar_container dhtmlxcalendar_skin_dhx_skyblue" style="display: none;"><div><div class="dhtmlxcalendar_month_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_month_hdr"><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_left&quot;;"></div><span class="dhtmlxcalendar_month_label_month" id="monthId">Enero</span><span id="yearId" class="dhtmlxcalendar_month_label_year">2014</span><div class="dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right" onmouseover="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right_hover&quot;;" onmouseout="this.className=&quot;dhtmlxcalendar_month_arrow dhtmlxcalendar_month_arrow_right&quot;;"></div></li></ul></div><div class="dhtmlxcalendar_days_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">w</div></li><li class="dhtmlxcalendar_cell_first">L</li><li class="dhtmlxcalendar_cell">M</li><li class="dhtmlxcalendar_cell">I</li><li class="dhtmlxcalendar_cell">J</li><li class="dhtmlxcalendar_cell">V</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">S</li><li class="dhtmlxcalendar_cell dhtmlxcalendar_day_weekday_cell">D</li></ul></div><div class="dhtmlxcalendar_dates_cont"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">53</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_date_weekend"><div class="dhtmlxcalendar_label">5</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">2</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">9</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">10</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">11</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">12</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">13</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">14</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">15</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">16</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">17</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">18</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">19</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">20</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">21</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">22</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">23</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">24</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">25</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month_weekend"><div class="dhtmlxcalendar_label">26</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">27</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">28</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">29</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">30</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_month"><div class="dhtmlxcalendar_label">31</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">1</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">2</div></li></ul><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell_wn"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">3</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">4</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">5</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">6</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell"><div class="dhtmlxcalendar_label">7</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">8</div></li><li class="dhtmlxcalendar_cell dhtmlxcalendar_cell_weekend"><div class="dhtmlxcalendar_label">9</div></li></ul></div><div class="dhtmlxcalendar_time_cont" style="display: none;"><ul class="dhtmlxcalendar_line"><li class="dhtmlxcalendar_cell dhtmlxcalendar_time_hdr"><div class="dhtmlxcalendar_time_label"></div><span class="dhtmlxcalendar_label_hours">16</span><span class="dhtmlxcalendar_label_colon">:</span><span class="dhtmlxcalendar_label_minutes">00</span></li></ul></div><div class="dhtmlxcalendar_bottom"></div></div></div><iframe id="dojo_request_iframe_IoIframe" name="dojo_request_iframe_IoIframe" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/resources/blank.html" onload="dojo_request_iframe_onload();" style="position: absolute; left: 1px; top: 1px; height: 1px; width: 1px; visibility: hidden"></iframe></body></html>

@@ -1,0 +1,346 @@
+<!--[if !IE]> SiteMinder Encoding=ISO-8859-1; <![endif]--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" style="display: block;"><head>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------
+    Ver     Date        Developer            Descr
+    ---     ----------  -----------         -------------------------------------------------------------------------------------------------------------------
+    1.0     11/17/2016  Dmitriy Konyayev    fixed issue with tabbing between fields
+                                            added AUTOCOMPLETE="off" to form to prevent auto-completion of form inputs
+    1.1     11/20/2016  Dmitriy Konyayev    added <style> for html as per premion recommendation
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" type="text/css" href="Styles/loginStyles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Corporate Systems Password Services</title>
+
+    <!-- 11/20/2016 START - PRIMEON RECOMMENDATION TO PREVENT CROSS SITE SCRIPTING -->
+    <style>
+        html {
+            display: none;
+        }
+    </style>
+    <!-- 11/20/2016 END - PRIMEON RECOMMENDATION TO PREVENT CROSS SITE SCRIPTING -->
+
+    <script language="text/javascript" src="Scripts/languages.js" type="text/javascript"></script>
+    <script language="text/javascript" src="Scripts/loginScript.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+    // 11/17/2016 START - PRIMEON RECOMMENDATION TO PREVENT CROSS SITE SCRIPTING
+    if (self == top)
+        document.documentElement.style.display = 'block';
+    else
+        top.location = self.location;
+    // 11/17/2016 END - PRIMEON RECOMMENDATION TO PREVENT CROSS SITE SCRIPTING
+
+    // get langauge
+    var L = window.navigator.userLanguage || window.navigator.language;
+    // L = "zh";
+
+    function init(){
+        // get cookie SMD
+        var s = getC("SMD");
+        if (s != null) {
+            var d = document.forms[0].DOMAIN;
+            for (var i = 0; i &lt; d.length; i++) {
+                if (d[i].value == s) {
+                    d.selectedIndex = i;
+                    break;
+                 }
+            }
+        }
+
+        document.getElementById("loginheaderAccent").style.backgroundImage = "url(Images/loginheadbg.gif)";
+        document.getElementById("loginheaderpart").style.backgroundImage = "url(Images/logintop.gif)";
+        document.getElementById("loginbodycontent").style.backgroundImage = "url(Images/loginmid.gif)";
+        document.getElementById("loginfooterbtm").style.backgroundImage = "url(Images/loginbtm.gif)";
+        document.getElementById("signInButton").style.backgroundImage = "url(Images/button.gif)";
+        /* DK Start */
+        // document.getElementById("logo").style.backgroundImage = "url(Images/logo.png)";
+        document.getElementById("logo").style.backgroundImage = "url(Images/logo1.png)";
+        /* DK End */
+        var f = document.getElementById("LoginForm");
+        f.UserIdInput.value = get("UserIdText");
+        f.pwdtxt.value = get("PasswordText");
+        f.style.display = "block";
+        f.UserIdInput.focus();
+        checkTry();
+
+        // DK Start, 02/03/2013
+        var selectLanguage = document.getElementById("selectlanguage");
+        for (i = 0; i &lt; selectLanguage.options.length; i++) {
+
+            if (selectLanguage.options[i].value == L.substring(0, 2)) {
+                selectLanguage.options.selectedIndex = i;
+                break;
+            }
+        }
+        // DK End, 02/03/2013
+    }
+
+    function arrayHasValue(arrObject, value) {
+        for (var i = 0; i &lt; arrObject.length; i++) {
+            if (arrObject[i] == value) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    function GetCookieValue(cookieName) {
+        var start = 0;
+        var end = 0;
+        var cookieString = document.cookie;
+        var cookieValue = ""; 				//What value is stored in the cookie
+        var iscookieFound = false; 			//Switch to determine if the cookie is being set
+
+        var i = 0;
+        // SCAN THE COOKIE FOR cookieName
+        while (i &lt;= cookieString.length) {
+            start = i;
+            end = start + cookieName.length;
+            if (cookieString.substring(start, end) == cookieName) {
+                iscookieFound = true;
+                break;
+            }
+            i++;
+        }
+        if (iscookieFound) {
+            start = end + 1;
+            end = cookieString.indexOf(";", start);
+            if (end &lt; 0) end = cookieString.length;
+            cookieValue = cookieString.substring(start, end);
+        }
+        return cookieValue;
+    }
+
+    function subF1() {
+
+        var f = document.forms["LoginForm"];
+        if (formValidation(f, true) == false) { return false; }
+        var u = f.UserIdInput.value;
+        var d = f.DOMAIN.value;
+
+        clearMessages();
+
+
+		    f.USER.value = u + d;
+
+		    f.submit();
+
+		}
+
+     function onLangChange(lang) {
+
+	        L = lang;
+                var field = "lang";
+                var url = document.getElementById("Hidden1").value;
+
+                //Remove the Language Query String
+                if(url.indexOf('?' + field + '=') != -1)
+                {
+                  url = url.substring(0, url.indexOf('?' + field + '='));
+                }
+
+                switch (L) {
+                  case "en":
+                      language = "en-US";
+                      break;
+		  case "ja":
+                      language = "ja-JP";
+                      break;
+	          case "es":
+                      language = "es-MX";
+                      break;
+                  case "pl":
+                      language = "pl-PL";
+                      break;
+                  case "ko":
+                      language = "ko-KR";
+                      break;
+                  default:
+                      language = "en-US";
+                      break;
+                }
+
+                //Append the current Language Query String
+                url += "?" + field + "=" + language;
+
+                //Assign the updated URL into the Target path
+                document.getElementById("Hidden1").value= url;
+
+        document.getElementById("SignInTitle").innerText = get("SignInTitle");
+        document.getElementById("UserIdLabel").innerText = get("UserIdLabel");
+        document.getElementById("UserIdInput").value = get("UserIdText");
+        document.getElementById("PasswordLabel").innerText = get("PasswordLabel");
+        document.getElementById("pwdtxt").value = get("PasswordText");
+        document.getElementById("DomainLabel").innerText = get("DomainLabel");
+        document.getElementById("SignInButtonText").innerHTML = get("SignInButton");
+        document.getElementById("ClearFields").innerHTML = get("ClearFields");
+        document.getElementById("AboutText").innerHTML = get("AboutText") + "&lt;br/&gt;&lt;br/&gt;";
+        document.getElementById("ChangePassword").innerHTML = get("ChangePassword");
+
+    }
+
+    // handle enter as submit
+    document.onkeypress = function () {
+        if (event.keyCode == 13)
+            subF1();
+    }
+
+    function domain_onchange() {
+        var cbDomain = document.getElementById("DOMAIN");
+        var lblUserID = document.getElementById("UserIdLabel");
+
+        if (cbDomain.options[cbDomain.selectedIndex].text == "ESS")
+            lblUserID.innerText = "User ID:";
+        else
+            lblUserID.innerText = get("UserIdLabel");
+    }
+    </script>
+</head>
+<body class="loginMain" onload="init()">
+    <form id="LoginForm" name="LoginForm" method="post" action="login.fcc" autocomplete="off" style="display: block;">
+        <input type="hidden" name="target" value="/" id="Hidden1" />
+        <input type="hidden" name="smauthreason" value="0" id="Hidden2" />
+        <input type="hidden" name="SMENC" value="ISO-8859-1" id="Hidden3" />
+        <input type="hidden" name="SMLOCALE" value="US-EN" id="Hidden4" />
+        <input type="hidden" name="smquerydata" value="" id="Hidden5" />
+        <input type="hidden" name="smagentname" value="QEtic3uu7OHdYvX2NvyVh71Npsx6bRlcrEYqv1qSEz+LwhLuPUzXX9zbg27Ti94u" id="Hidden6" />
+        <input type="hidden" name="postpreservationdata" value="" id="Hidden7" />
+
+        <div id="loginboundary">
+            <div id="loginheaderpart" style="background-image: url(&quot;Images/logintop.gif&quot;);">
+            </div>
+            <div id="loginbodycontent" style="background-image: url(&quot;Images/loginmid.gif&quot;);">
+                <div id="loginheader">
+                    <div id="logo" class="loginlogo" style="background-image: url(&quot;Images/logo1.png&quot;);">
+                        <!-- <img id="logo" xsrc="Images/logo.png" alt="MyMetLife" /> -->
+                        <img id="logo" xsrc="Images/logo1.png" />
+                    </div>
+                    <div class="loginheadtxt" id="SignInTitle">
+                        <script type="text/javascript">
+                        out("SignInTitle");
+                        </script>Iniciar sesión
+                    </div>
+                </div>
+                <div id="loginheaderAccent" style="background-image: url(&quot;Images/loginheadbg.gif&quot;);">
+                     
+                </div>
+                <div id="loginmain">
+                    <div id="loginportalsection">
+                        <div id="loginsection" class="loginbox">
+                            <div id="divRemainingRetries"></div>
+                            <div class="logininsidebox">
+                                <div class="">
+                                    <span class="userlabel" id="UserIdLabel">
+                                        <script type="text/javascript">
+                                        out("UserIdLabel");
+                                        </script>Identificación de usuario
+                                    </span>
+
+                                </div>
+                                <div class="lgnsep empid">
+                                    <input id="UserIdInput" tabindex="10" type="text" name="UserIdInput" value="" onblur="setUDefaultValue(this);checkDomainInUserId();displayUserIdMsg();//clearMessages();" onfocus="setFocusByFormElement('LoginForm','UserIdInput')" onclick="clearMessages()" size="27" class="logindetails" maxlength="100" onkeyup="captureKey(event);" />
+                                    <input type="hidden" id="USER" name="USER" value="" />
+                                </div>
+                                <div id="msgUserId" class="userlabel" style="visibility: hidden;"></div>
+
+                                <div class="userlabel" id="PasswordLabel">
+                                    <script type="text/javascript">
+                                    out("PasswordLabel");
+                                    </script>Contraseña
+                                </div>
+                                <div class="lgnsep" id="passwordfield">
+                                    <input type="text" id="pwdtxt" tabindex="20" name="txtPwd" class="logindetails" value="" onfocus="showElement('PASSWORD');hideElement('pwdtxt');setFocusByID('PASSWORD')" style="display: none;" />
+                                    <input type="password" id="PASSWORD" name="PASSWORD" size="27" maxlength="30" value="" class="logindetails" style="display: block;" onblur="setPDefaultValue(this);//clearMessages();" onclick="clearMessages()" onkeyup="captureKey(event);" />
+                                </div>
+                                <div id="msgPassword" class="userlabel">
+                                </div>
+                                <div class="userlabel" id="DomainLabel">
+                                    <script type="text/javascript">
+                                    out("DomainLabel");
+                                    </script>Dominio
+                                </div>
+                                <div class="lgnsep" id="domainfield" tabindex="30">
+                                    <select id="DOMAIN" name="DOMAIN" onchange="domain_onchange();" onblur="//clearMessages();" onkeyup="captureKey(event);" onclick="clearMessages()">
+                                        <option value=""></option>
+                                        <option value="@metnet">METNET</option>
+                                        <option value="@meteurope">METEUROPE</option>
+                                        <option value="@ussales">USSALES</option>
+                                        <option value="@alicocorp">ALICOCORP</option>
+                                        <option value="">ESS</option>
+                                    </select>
+                                </div>
+                                <div id="msgDomain" class="userlabel">
+                                </div>
+                                <div class="lgnsep signbtn">
+                                    <center>
+                                        <div id="signInButton" onclick="subF1()" style="background-image: url(&quot;Images/button.gif&quot;);">
+                                            <div style="padding-top: 5px" id="SignInButtonText">
+                                                <script type="text/javascript">
+                                                out("SignInButton");
+                                                </script>Iniciar sesión
+                                            </div>
+                                        </div>
+
+                                        <span class="cleartxt">
+                                            <a href="javascript:void(0)" onclick="clearFormElements()" id="ClearFields">
+                                                <script type="text/javascript">
+                                                    out("ClearFields");
+                                                </script>Borrar los campos
+                                            </a>
+                                        </span>
+
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfloat">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="loginfooter infoSection">
+                    <span id="AboutText">
+                        <script type="text/javascript">
+                    if (get("AboutText") != "") {
+                        out("AboutText");
+                        document.writeln("&lt;br/&gt;&lt;br/&gt;");
+                    }
+                        </script>Su <b>Directorio Activo ID</b> es el identificador que se utiliza para conectarse a su ordenador <br /> MetLife.<br /><br />
+
+                    </span>
+                    <span id="ChangePassword">
+                        <script type="text/javascript">
+                        out("ChangePassword");
+                        </script>Comuníquese con su servicio de ayuda local para recibir asistencia con la contraseña
+                    </span>
+                    <br /><br /><br />
+
+                    <div align="center">
+                        <select id="selectlanguage" onchange="onLangChange(this.options[this.options.selectedIndex].value);">
+                            <option value="en" selected="selected">English (United States)</option>
+                            <option value="ja">日本語 ‎(Japanese)‎</option>
+                            <option value="es">Español (Spanish)</option>
+                            <option value="pl">polski (Polish)</option>
+                            <option value="ko">한국어 ‎(Korean)‎</option>
+                            <!--  Commented out other Langugaes
+                            <option value="el">&#949;&#955;&#955;&#951;&#957;&#953;&#954;&#940; - &#8206;ellenik�&#8206;</option>
+                            <option value="fr">fran�ais</option>
+                            <option value="it">italiano</option>
+                            <option value="pt">Portugu�s</option>
+                            <option value="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; - &#8206;russkij&#8206;</option>
+                            <option value="tr">T�rk�e</option>
+                            <option value="zh">&#20013;&#25991; - &#8206;Chinese&#8206;</option>
+                            -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="loginfooterbtm" style="background-image: url(&quot;Images/loginbtm.gif&quot;);">
+            </div>
+        </div>
+    </form>
+
+
+
+
+</body></html>

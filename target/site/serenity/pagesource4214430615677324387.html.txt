@@ -1,0 +1,537 @@
+<!DOCTYPE html><!--[if lt IE 7]>      
+<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+   <![endif]--><!--[if IE 7]>         
+   <html class='no-js lt-ie9 lt-ie8'>
+      <![endif]--><!--[if IE 8]>         
+      <html class='no-js lt-ie9'>
+         <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+               <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1" />
+               <meta http-equiv="X-UA-Compatible" value="IE=Edge,chrome=1" />
+               <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+               <meta http-equiv="PRAGMA" content="NO-CACHE" />
+               <meta name="description" content="" />
+               <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- build:js scripts/vendor/ie.js --><!--[if lt IE 9]>
+               <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+               <script src="bower_components/respond/src/respond.js"></script>
+               <![endif]--><!-- endbuild -->
+               
+               
+               
+               
+               
+               <title>Core GSP</title>
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/bootstrap.min.css" />
+               <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/style.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/datepicker3.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.css" />
+        	   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.skinHTML5.css" />
+               </head><body class="ml"><div id="webrespath">
+  <script>
+  /*&lt;![CDATA[*/
+  var webResource = 'https:\/\/qa.salespilot.metlife.com.co\/DataCenter_LATAM';
+  var coreFolder = 'GSP_CORE';
+  var tenantFolder = 'Tenant_COLOMBIA';
+  var locale = 'es_CO';
+  var needAnalysisFlow = '';
+  if(locale == null) {
+    locale = 'es-co';
+  }
+  var appDateFormat = "DD/MM/YYYY";
+  var webResourceAbsolute = 'https:\/\/qa.salespilot.metlife.com.co';
+	var digSeparator=".";
+	var decimalPoint=",";
+  var appendDigit = "0";
+  var appCurMaxLength = 15;
+  var decimalPointRegExp = new RegExp("[" + decimalPoint + "]", "g");
+  var digSeparatorRegExp = new RegExp("[" + digSeparator + "]", "g");
+  /*]]&gt;*/
+  </script><!--[if lt IE 9]>
+		  <script  th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.js'}"></script>
+		  <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/respond/src/respond.js'}"></script>
+        <![endif]-->
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/Calendar/dhtmlxcalendar.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jsrender.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/initGomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/gomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.min.js"></script><!-- <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.js'}" type="text/javascript"></script> --> 
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/prettify.js"></script>
+   <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/isotope.pkgd.min.js"></script>
+ 
+  <script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/throbber.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/adminLeftNav.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/sessionUtil.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/dashBoard.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/parent.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspAjaxDataConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/utils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspBaseController.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspConstants.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCalendarWidget.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/html.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/urlMappings.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/paginationConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspPagination.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/request/iframe.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidateElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCommonUtils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspShowHideElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/string.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/parser.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/regexp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/lambda.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/array.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/object.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/_base/url.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/promise/all.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/stamp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidations.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/regExp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/main.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/locale.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/en-us/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/es-co/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/supplemental.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/gregorian.js"></script><script type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'es-co',isDebug:true, extraLocale: ['en-us']" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/dojo.js"></script><!--  <script th:if="${session.langDefault =='en_US'}" th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/dojo/dojo.js'}" type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'en-us',isDebug:true"></script> --><!--this is added temporarly to work with sfdc integration of needs analysis screen, need to be removed later onwards -->
+ 
+  
+  
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/modernizr/modernizr.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/respond.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.polyfill.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.addListener.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-typeahead.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/main.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/locales-datepicker/bootstrap-datepicker.es-co.js"></script>
+</div>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-slider.min.js"></script>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/CanvasSDK/canvas-all.js"></script>
+               <script type="text/javascript">
+                  require([ webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(throbber){  
+                  	throbber.showThrobber("throbberDiv", false);
+                  });
+                  require([webResource+'/'+tenantFolder+'/WebContent/scripts/adminLeftNav.js',webResource+'/'+tenantFolder+'/WebContent/scripts/sessionUtil.js',webResource+'/'+tenantFolder+'/WebContent/scripts/dashBoard.js',webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(adminLeftNav,sessionUtil,dashBoard,throbber){  
+                  	adminLeftNav.init();
+                  	sessionUtil.init();
+                  	dashBoard.init();
+                  	throbber.removeThrobber();
+                  });
+                  require([ webResource+'/'+tenantFolder+'/WebContent/scripts/parent.js'],function(parent){  
+                  	parent.init();
+                  });
+                  
+               </script>
+               <style>
+                  .content-wrap .contentClient {
+                  margin: 0 20px 0 10px;
+                  }
+               </style>
+            
+            
+               <section class="content-wrap">
+                  <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                  <div id="wrapper">
+                  <div></div>
+                     <div><!--Left Nav--><!-- navFragment starts-->
+                        	
+                        
+                        <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                        <nav class="main-nav">
+                             
+						   <div>
+						   <div>
+                              <div id="leftNavigationFragment">   
+   <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+   <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+   <input type="hidden" id="CN" name="CN" value="COL" /><!--Left Nav-->
+   
+   <div>
+      <div></div>
+         <ul class="nav nav-pills nav-stacked">
+            <li class="profile" id="profileIcon">
+               <img src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/images/employee.jpg" />
+               <div class="userMenu" id="userMenu">
+                  <span class="arrow">Arrow</span>
+                  <ul>
+                     <li><a href="#" id="viewProfileLink" data-met-initjs="userProfile" data-original-title="" title="">Ver Perfil</a></li>
+                     <li><a href="#" data-toggle="modal" id="logoutLink" data-original-title="" title="">Salir</a></li>
+                  </ul>
+               </div>
+            </li><!-- DashBoard Tab -->
+			
+            <li class="home"><a href="#" id="dashboardTab" data-original-title="" title=""> 
+			<i class="gsp-icon home"></i><span>Menú Principal</span></a></li><!-- Auditor Dashboard -->
+			
+						
+			<!-- Reassign Tab -->
+			
+			<!-- Client Tab -->
+			
+			
+            <li class="customer">
+			<a href="#" id="clientsTab" data-met-initjs="search" data-original-title="" title=""><i class="gsp-icon customer"></i><span>Clientes</span></a></li><!-- NeedAnalysis Tab -->
+			
+			
+			<li id="needAnalysisTab" class="need"><a id="needAnalysisTab" href="#" data-original-title="" title=""><i class="gsp-icon need"></i><span><span>Análisis de Necesidades</span></span></a></li><!-- Illustration Tab -->
+			
+			
+			<li class="illustration active"><a id="illustrationTab" href="#" data-original-title="" title=""><i class="gsp-icon illustration"></i><span><span>Cotizaciones</span></span></a></li><!-- ApplicationSearch Tab -->	
+			
+			
+			<li class="application">
+			<a href="#" id="applicationTab" data-original-title="" title=""><i class="gsp-icon application"></i><span>Solicitud</span></a></li><!-- Reports Tab -->
+			
+			
+			<li class="product">
+			<a href="#" id="reportsTab" data-original-title="" title="">
+			<i class="gsp-icon product"></i><span>Reportes</span></a></li><!-- Orphan Tab  th:if="${(session.userDetailMap['ROLE_CD'] =='15901' and session.userHierarchyMap['userLevel'] !='4') or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"--> 
+			
+			
+			<!-- GlobalSearch Tab --><!-- <li th:class="${globalSearchTab != null and globalSearchTab == 'true'} ? 'search active' : 'search'" th:if="${session.userDetailMap['ROLE_CD'] =='15901' or session.userDetailMap['ROLE_CD'] =='15905' or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"><a href="#" id="globalSearchTab"><i class='gsp-icon search'></i><span
+			th:utext="#{${ tenantCode}+'.globalSearch'}"></span></a></li>	 -->
+			
+			
+			
+         </ul>
+      </div>
+   </div></div>
+                           </div> 
+						    
+						   
+						   
+						   
+						    
+						    
+						      
+						     
+						    
+						   
+						   
+						   
+						   
+						     
+						    
+						    
+						    
+						   
+                           
+                        </nav><!--Left Nav--><!-- navFragment ends-->
+                        
+                        	
+                     </div><!--Slice--><!--  <div class="content"> -->
+                     
+                     
+                     <div id="mainContentDiv">
+                        <div id="appContent">
+                           <div id="parent_content">
+   <form id="frmParentWbFlow" name="frmParentWbFlow" data-met-formtosubmit="" method="post">
+   <input id="hiddenLinkId" type="hidden" name="metaDataMap['linkId']" value="newIllustration" />
+    <input id="hiddenParentLinkId" type="hidden" name="metaDataMap['parentLinkId']" value="newIllustration" />
+	<input id="subFlowId" type="hidden" name="metaDataMap['subFlowId']" value="" />
+	<input id="stateId" type="hidden" name="metaDataMap['parentLinkId']" value="" />
+    <input type="hidden" name="flowExecUrl" id="flowExecUrl" value="/sales/parentflow?execution=e3s1&amp;TOKEN_CLT_TRNS=92GJ99RSMBWW3V7A" />
+   <input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="92GJ99RSMBWW3V7A" /></form>
+   </div>
+                        </div>
+                     </div><!--   </div> --><!-- throbber supported fields-->
+                     
+                     
+                     <div id="throbberDiv"><div class="loader"></div><div class="loaderBG"></div></div>
+                      <div id="fg_backgroundpopup"></div>
+                  </div>
+               </section>
+               <div id="overlay_ImportFragment">
+        <div id="createNewClient_overlay">
+	
+	
+	<div class="modal fade" id="createNewClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div><!-- <div class="modal-body">
+                  	<p><span th:utext="#{${ tenantCode}+'.clientInfoSaved'}"></span></p>
+                </div> -->
+                
+                 <div class="modal-body">
+                  	<p>
+                  	<span>La información del cliente ha sido actualizada</span>
+                  	
+                  	</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnSearchClient" class="btn btn-primary btn-lg pull-left">Menú de Clientes</button>
+                  <button type="button" data-met-initjs="needsAnalysis" id="btnContinueToNeeds" class="btn btn-primary btn-lg pull-left">Análisis de Necesidades</button>
+				     
+ 				    
+ 				    
+	            </div>
+              </div>
+            </div>
+          </div>
+		 
+	</div>
+		<div id="createNewClientConfirm_Overlay"><!--  <div id="createNewClientConfirmOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+            <div class="popHeader">
+               <p>
+                  <a href="#" class="closeBtn" data-met-hidepopup="createNewClientConfirmOverlay" id="clientConfirmCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+            </div>
+            <div class="sampleTxt">
+               <p><span th:utext="#{${ tenantCode}+'.createClientConfirm'}"></span></p>
+               
+         <article class="row">
+                    <div class="col-sm-12">
+                      <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+                        <div class="form-group">
+                         <button  class="btn btn-primary btn-mobile btn-form-submit" id="btnCreateClientOK" type="button" th:utext="#{${ tenantCode}+'.createClientOK'}"></button>
+         <button  class="btn btn-secondary btn-mobile" th:utext="#{${ tenantCode}+'.createClientCancel'}" id="btnCreateClientCancel" type="button" data-met-initjs="planSelection"></button>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+            </div>
+         </div>
+         
+         </div>
+         </div>
+         </html> -->
+      
+      <div class="modal fade" id="createNewClientConfirmOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>¿Está seguro de crear?</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnCreateClientOK" data-met-initjs="createNewClient">Si</button>
+                  <button type="button" id="btnCreateClientCancel" class="btn btn-primary btn-lg pull-left">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="cancelOverlay_overlay"><!-- <div id="cancelOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="cancelOverlay" id="cancelOverlayCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.cancelText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnCancelNo" type="button" data-met-hidepopup="cancelOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	
+    </div>
+</html> -->
+		
+
+<div class="modal fade" id="cancelOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="modal fade" id="cancelOverlayNeedsAnalysis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnNeedsCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+		<div id="profileUpdate_overlay"><!-- <div id="profileUpdateOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.profileUpdatedSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnUpdateProfileSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-hidepopup="profileUpdateOverlay" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+      <div class="modal fade" id="profileUpdateOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Perfil salvado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnUpdateProfileSuccessOverlayOk" data-dismiss="modal" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay">De acuerdo</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="changePasswordSuccess_Overlay"><!-- <div id="changePasswordSuccessOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.changePasswordSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnChngPwdSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-initjs="userProfile"  data-met-overlay="changePasswordSuccessOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+
+
+      <div class="modal fade" id="changePasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Su contraseña se ha cambiado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                 <button class="btn btn-primary btn-lg pull-left" data-dismiss="modal" id="btnChngPwdSuccessOverlayOkAgent" type="button" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay">De acuerdo</button>
+             
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="logout_overlay"><!-- <div id="logoutOverlay"  th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" id="logoutOverlayCloseBtn" ><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.logoutText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnlogoutYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnlogoutNo" type="button" data-met-hidepopup="logoutOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	 -->
+		
+		<div class="modal fade" id="logoutOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<form id="frmLogoutOverlay" data-met-logoutformtosubmit="" data-met-formmethod="POST">
+			<input type="hidden" id="hidLastVisitedPage" name="lastVisitedPage" value="" />
+			<input type="hidden" id="CN" name="CN" value="COL" />
+		</form>
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>¿Esta seguro que quiere salir? </span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnlogoutYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+       <div id="resetPassword_successOverlay"><!--  <div id='resetPasswordSuccessOverlay' class="pop_container forgotPassword_Popup"> -->
+     
+         <div class="modal fade" id="resetPasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true"> 
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3>Cambiar Contraseña</h3>
+                 
+               </div>
+               <div class="modal-body">
+                  <form class="fl">
+                     <p><span>La contraseña ha sido cambiada exitosamente.</span>
+                        <span>Por favor ingrese de nuevo</span>
+                     </p>
+					 </form>
+               
+                    </div>
+                     <div class="clear"></div>
+                     <div class="modal-footer" align="center">
+                        <button id="btnloginAfterReset" class="btn btn-primary btn-lg pull-left" type="button">De acuerdo</button>
+                     </div>
+            </div>
+         </div>
+          </div><!--  </div> --> 
+     
+   </div>
+        <div id="sessionPopUp"><!--  <div id="fg_sessPopUp_Container" class="pop_container" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div id="fg_container_header"></div>
+         <div class="pop_box" >
+            <div class="pop_title" th:utext="#{${ tenantCode}+'.sessionTimeOutMessage'}"> </div>
+            <div class="fl pop_txt" id="sessRemainTime"> </div>
+            <div class="fr">
+      <button id="btnClose" th:utext="#{${ tenantCode}+'.close'}"></button>
+            </div>
+            <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" th:value="${session.MAXSESSINTERVAL}" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" th:value="${session.timeBeforeSessExpire}" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" th:value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+         </div>
+      </div>
+      <div id="fg_backgroundpopup"></div>
+   </div>
+</html> -->
+     
+
+<div class="modal fade" id="fg_sessPopUp_Container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog" id="fg_container_header">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+				<div class="fl pop_txt" id="sessRemainTime"> </div>
+					<p><span>Esta sesión está a punto de agotar el tiempo. Guarde su trabajo para evitar la pérdida de datos.</span></p>
+                     <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" id="btnClose" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div> 
+   </div>
+			   <input type="hidden" id="flowStatus" value="1" /><!-- <div class="modal-backdrop fade in"></div> -->
+			   
+            
+         </body></html>
